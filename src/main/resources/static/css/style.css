@@ -1,0 +1,252 @@
+body{
+	overflow: hidden;
+	padding: 0px;
+	margin: 0px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 0.8rem;
+	color: #676767;
+}
+
+label{
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 1.8em;
+}
+
+h2 {
+	font-size: 1.5em;
+}
+.navbar-principal {
+	height: 45px !important;
+	overflow: hidden;
+}
+
+.ul-nav, .ul-nav li{
+	display: inline-block;
+}
+
+.ul-nav li{
+	margin: 0px 10px 0 10px;	
+}
+
+#menuLateral, .logo{
+	height: 100%;
+	width: 35%;
+	margin-bottom: 0px;
+	float:left; 
+}
+
+#menuLateralRecuado {
+	height: 100%;
+	width: 50px;
+	margin-bottom: 0px;
+	float:left; 
+}
+
+.ui-menu-lateral-recuado{
+	border-right: 1px #bbdefb groove;
+	position: absolute;
+    top: 0;
+    left: 0;
+    /*right: 65%;*/
+    bottom: 0;
+    padding-top:45px;
+    padding-left:0px;
+    list-style-type: none;
+    width: 50px;
+}
+
+.ui-menu-lateral-recuado li{
+	margin: 0px;
+	border-bottom: 1px #bbdefb solid;
+	padding: 20px 0px 20px 15px;
+	border-left-color: #ffffff !important;
+	border-left-width: 2px !important;
+	border-left-style: solid !important; 
+}
+
+.ui-menu-lateral{
+	border-right: 1px #bbdefb groove;
+	position: absolute;
+    top: 0;
+    left: 0;
+    right: 65%;
+    bottom: 0;
+    padding-top:45px;
+    padding-left:0px;
+    list-style-type: none;
+    margin-bottom:0px;
+}
+
+.ui-menu-lateral li{
+	margin: 0px;
+	border-bottom: 1px #bbdefb solid;
+	padding: 20px 0px 20px 15px;
+	border-left-color: #ffffff !important;
+	border-left-width: 2px !important;
+	border-left-style: solid !important;
+}
+
+.ui-menu-lateral li.active, 
+.ui-menu-lateral-recuado li.active,
+.ui-menu-lateral li:hover, 
+.ui-menu-lateral-recuado li:hover{
+	border-left-color: #1e94d2 !important;
+	border-left-width: 2px !important;
+	border-left-style: solid !important;
+}
+
+.menu-lateral-link{
+	text-decoration: none;
+	color: #4285F4;
+	font-weight: 300;
+}
+
+.menu-lateral-link:hover{  
+	color: #0d47a1;
+	font-weight: 500;
+}
+
+.body-content{
+	margin-top: 45px !important;
+	padding: 0px;
+	margin: 0px;
+	min-height: 100%;
+	height: 100%;
+	max-height: 100%;
+}
+
+.div-conteudo{
+	overflow: auto;
+	padding: 1em !important;
+	margin: 1em !important;
+    margin-top: 15px !important;
+    border-radius: 2px !important;
+    -moz-border-radius: 2px !important;
+    -webkit-border-radius: 2px !important;
+    box-shadow: 0 2px 8px 0px rgba(0, 0, 0, 0.3) !important;
+    -webkit-box-shadow: 0 2px 8px 0px rgba(0, 0, 0, 0.3) !important;
+    -moz-box-shadow: 0 2px 8px 0px rgba(0, 0, 0, 0.3) !important;	
+}
+
+table{
+	border-collapse: collapse;
+	border-spacing: 2px;
+    border-color: grey;
+}
+
+thead th{
+	font-weight: bold;
+	border: 1px solid #d8d8d8;
+}
+
+tbody{
+	background-color: #ffffff;
+}
+
+.table-hover tbody tr a{
+	color: #676767;
+	margin: auto;
+}
+
+.table-hover tbody tr:hover, .table-hover tbody tr:hover a{
+	background-color: #4285F4 !important;
+	color: #ffffff
+}
+
+.pagination{
+	margin: 0px;
+}
+
+.row{
+	padding-top: 15px;
+	padding-bottom: 15px;	
+}
+
+.col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, 
+.col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1,
+.col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, 
+.col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, 
+.col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, 
+.col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, 
+.col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, 
+.col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, 
+.col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, 
+.col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, 
+.col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto{
+	margin: 0px;
+}
+
+.btn{
+	border-radius: .25rem !important;
+}
+
+.pretty{
+	margin-top: 34px;
+}
+
+.without-margin{
+	margin: 0px;
+}
+
+.btn-outline-primary {
+    border: 1px solid #4285f4!important;
+}
+
+/****** CUIDA DOS ICONS ******/
+.fa{
+	font-weight: 100;
+}
+
+.fa-stethoscope, .fa-trash-alt, .fa-search{
+	font-weight: 900 !important;
+}
+
+.fa-calendar{
+	font-style: normal;
+}
+
+.fa-bars, .fa-pencil-alt,
+.fa-edit, .fa-check, .fa-sync-alt{
+	font-weight: 600;
+}
+
+/****** FIM - CUIDA DOS ICONS ******/
+
+/*Menus para diferentes tamanhos de telas*/
+@media (min-width: 802px) {
+  .logo{
+	height: 100%;
+	width: 28%;
+	min-width: 200px;
+	margin-bottom: 0px;
+	float:left; 
+  }
+  
+  .navbar-principal {  
+  	overflow: visible;
+  }
+}
+
+@media (min-width: 1024px) {
+  .logo{
+	height: 100%;
+	width: 22%;
+	margin-bottom: 0px;
+	float:left; 
+  }
+
+}
+
+@media (min-width: 1200px) {
+  .logo{
+	height: 100%;
+	width: 20%;
+	margin-bottom: 0px;
+	float:left; 
+  }
+
+}
+

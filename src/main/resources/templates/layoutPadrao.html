@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+<meta charset="UTF-8" />
+<title>Calculadora da Bolsa</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap-datepicker.standalone.min.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/css/fontawesome-all.min.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/pretty-checkbox/dist/pretty-checkbox.min.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+</head>
+<body>
+	<nav class="navbar navbar-dark bg-dark">
+		<p class="navbar-brand justify-content-center logo">
+			<img th:src="@{/img/logo-wide.png}" width="200dp" class="position-relative" />
+		</p>
+		
+		<ul class="navbar-nav ul-nav" style="color: #FFF;">
+			<li class="nav-item active"><a class="nav-link" th:href="@{/}">Home</a></li>
+			<li class="nav-item"><a class="nav-link" th:href="@{/notasNegociacao}">Minhas Notas</a></li>
+			<!-- <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+				data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Dropdown </a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="#">Action</a> <a class="dropdown-item" href="#">Another action</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="#">Something else here</a>
+				</div>
+			</li> -->
+			<li class="nav-item"><a class="nav-link" th:href="@{/upload}">Upload</a></li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0">
+			<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+		</form>
+	</nav>
+
+	<div class="div-conteudo">
+		<section layout:fragment="conteudo">
+			<p>O conteúdo vai entrar aqui!</p>
+		</section>
+	</div>
+
+	<script th:src="@{/js/jquery-3.2.1.min.js}"></script>
+	<script th:src="@{/js/popper.min.js}"></script>
+	<script th:src="@{/js/bootstrap.min.js}"></script>
+	<script th:src="@{/js/bootstrap-datepicker.min.js}"></script>
+	<script th:src="@{/js/bootstrap-datepicker.pt-BR.min.js}"></script>
+	<script>
+		// Tooltips Initialization
+		$(function() {
+			$('[rel="tooltip"]').tooltip();
+			redimencionar();
+		})
+
+		$(window).resize(function() {
+			redimencionar();
+		});
+
+		function redimencionar() {
+			var h = $(window).height();
+			h = h - 100;
+			$(".div-conteudo").attr('style', "height:" + h + "px !important;");
+		}
+
+		function mudarTotalPerPage() {
+			var size = $("#totalPage").val();
+			$("a.page-link").each(function() {
+				var href = $(this).attr('href');
+				href = this.href.replace(/size=\d+/, "size=" + size);
+				$(this).attr('href', href);
+			});
+			window.location = $("#primeiraPagina").attr("href");
+		}
+	</script>
+
+</body>
+</html>

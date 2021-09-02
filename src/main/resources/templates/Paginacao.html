@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:th="http://www.thymeleaf.org">
+	
+<nav>
+  <ul class="pagination justify-content-end">
+  	<li class="page-item">
+      	<span class="page-link" style="font-weight: 600;" th:text="|(${pagina.getNumber()+1} de ${pagina.getTotalPages()})|"></span>
+    </li>
+    <li class="page-item" th:classappend="${!pagina.hasPrevious()} ? disabled : '' ">
+      	<a id="primeiraPagina" class="page-link" th:href="${pagina.urlToPage(0,pagina.getSize())}">Primeira</a>
+    </li>
+    <li class="page-item" th:if="${pagina.getNumber()-3 >= 0 && pagina.getNumber()-3 < pagina.getTotalPages()}">
+    	<a class="page-link" th:href="${pagina.urlToPage(pagina.getNumber()-3, pagina.getSize())}">
+    		<span th:text="${pagina.getNumber() > 0 ? pagina.getNumber() - 2 : ''}"></span>
+    	</a>
+    </li>
+    <li class="page-item" th:if="${pagina.getNumber()-2 >= 0 && pagina.getNumber()-2 < pagina.getTotalPages()}">
+    	<a class="page-link" th:href="${pagina.urlToPage(pagina.getNumber()-2, pagina.getSize())}">
+    		<span th:text="${pagina.getNumber() > 0 ? pagina.getNumber() - 1 : ''}"></span>
+    	</a>
+    </li>
+    <li class="page-item" th:if="${pagina.getNumber()-1 >= 0 && pagina.getNumber()-1 < pagina.getTotalPages()}">
+    	<a class="page-link" th:href="${pagina.urlToPage(pagina.getNumber()-1, pagina.getSize())}">
+    		<span th:text="${pagina.getNumber() > 0 ? pagina.getNumber() : ''}"></span>
+    	</a>
+    </li>
+    <li class="page-item active">
+    	<a class="page-link" th:href="${pagina.urlToPage()}">
+      		<span th:text="${pagina.getNumber() + 1}"></span>
+      	</a>
+    </li>
+    <li class="page-item" th:if="${pagina.getNumber()+1 < pagina.getTotalPages()}">
+    	<a class="page-link" th:href="${pagina.urlToPage(pagina.getNumber()+1, pagina.getSize())}">
+    		<span th:text="${pagina.getNumber() + 2}"></span>
+    	</a>
+    </li>
+    <li class="page-item" th:if="${pagina.getNumber()+2 < pagina.getTotalPages()}">
+    	<a class="page-link" th:href="${pagina.urlToPage(pagina.getNumber()+2, pagina.getSize())}">
+    		<span th:text="${pagina.getNumber() + 3}"></span>
+    	</a>
+    </li>
+    <li class="page-item" th:if="${pagina.getNumber()+3 < pagina.getTotalPages()}">
+    	<a class="page-link" th:href="${pagina.urlToPage(pagina.getNumber()+3, pagina.getSize())}">
+    		<span th:text="${pagina.getNumber() + 4}"></span>
+    	</a>
+    </li>
+    <li class="page-item" th:classappend="${pagina.isLast()} ? disabled : '' ">
+      	<a class="page-link" th:href="${pagina.urlToPage(pagina.getTotalPages()-1, pagina.getSize())}">Última</a>
+    </li>
+    <li>
+		<select class="custom-select" id="totalPage" onchange="mudarTotalPerPage();"
+		 style="padding:.3rem 1.5rem .3rem .75rem;height:calc(2rem + 2px);">
+		  <option th:each="tot : ${pagina.listTotalPerPage}" 
+		  	th:value="${tot}"
+		  	th:text="${tot}"
+		  	th:selected="(${tot} == ${pagina.getSize()})"></option>
+		</select>
+    </li>
+  </ul>
+</nav>
+
+</html>

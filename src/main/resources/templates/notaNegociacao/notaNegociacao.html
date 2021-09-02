@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+	layout:decorator="/layoutPadrao">
+
+<section layout:fragment="conteudo">
+
+	<div class="card">
+	  <div class="card-header">
+	    <h1>Minhas Notas</h1>
+	  </div>
+	</div>
+	
+	<br/>
+	
+	<div th:if="${message}">
+		<h2 th:text="${message}"></h2>
+	</div>
+	
+	<form method="POST" enctype="multipart/form-data" action="upload">
+		
+		
+		
+		<div class="form-group">
+			<label for="inputNota">Selecionar Nota de Corretagem</label> 
+			<input type="file" class="form-control-file" id="inputNota" name="file">
+		</div>
+		
+		<br />
+		
+		<button type="submit" class="btn btn-primary">Enviar</button>
+	</form>
+
+</section>
+</html>
